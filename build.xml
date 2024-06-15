@@ -6,15 +6,7 @@
   <property name="composer.flags" value="--ansi"/>
 
 
-  <target name="help">
-    <uptodate property="uptodate.visualizer" srcfile="build.xml" targetfile="build.svg"/>
-    <runtarget target="map"/>
-    <open path="build.svg"/>
-  </target>
-
-  <target name="map" unless="uptodate.visualizer" description="Create buildfile map">
-    <visualizer format="svg"/>
-  </target>
+  <target name="setup" depends="composer:install"/>
 
   <target name="composer:install" description="Installs the project dependencies">
     <!-- Use &#45;&#45;no-dev for prod -->
@@ -27,29 +19,18 @@
     </composer>
   </target>
 
-  <target name="composer:validate" description="Validates a composer.json and composer.lock">
-    <composer command="validate">
-      <arg value="--ansi"/>
-      <arg value="--no-interaction"/>
-    </composer>
+  <target name="db:start" description="Start institute database">
+    <phing  dir="db-draw" target="dc:up" haltonfailure="true"/>
   </target>
 
-  <target name="composer:audit" description="Checks for security vulnerability advisories for installed packages">
-    <composer command="audit">
-      <arg value="--ansi"/>
-      <arg value="--no-interaction"/>
-      <arg value="--no-dev"/>
-    </composer>
+  <target name="help">
+    <uptodate property="uptodate.visualizer" srcfile="build.xml" targetfile="build.svg"/>
+    <runtarget target="map"/>
+    <open path="build.svg"/>
   </target>
 
-  <target name="composer:normalize" description="Normalizes composer.json according to its JSON schema">
-    <composer command="normalize">
-      <arg value="--ansi"/>
-      <arg value="--no-interaction"/>
-      <arg value="--diff"/>
-      <arg value="--indent-size=2"/>
-      <arg value="--indent-style=space"/>
-    </composer>
+  <target name="map" unless="uptodate.visualizer" description="Create buildfile map">
+    <visualizer format="svg"/>
   </target>
 
 </project>
