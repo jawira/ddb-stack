@@ -7,6 +7,11 @@
         "php": ">=8.0.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "doctrine/annotations": "^2.0",
+        "doctrine/doctrine-bundle": "^2.12",
+        "doctrine/doctrine-migrations-bundle": "^3.3",
+        "doctrine/orm": "^2.19",
+        "jawira/doctrine-diagram-bundle": "^0.8.0",
         "symfony/console": "6.0.*",
         "symfony/dotenv": "6.0.*",
         "symfony/flex": "^2",
@@ -14,19 +19,17 @@
         "symfony/runtime": "6.0.*",
         "symfony/yaml": "6.0.*"
     },
-    "require-dev": {
-    },
     "config": {
         "allow-plugins": {
             "composer/package-versions-deprecated": true,
             "symfony/flex": true,
-            "symfony/runtime": true
+            "symfony/runtime": true,
+            "ergebnis/composer-normalize": true
         },
         "optimize-autoloader": true,
-        "preferred-install": {
-            "*": "dist"
-        },
-        "sort-packages": true
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "platform-check": true
     },
     "autoload": {
         "psr-4": {
@@ -63,8 +66,13 @@
     },
     "extra": {
         "symfony": {
-            "allow-contrib": false,
-            "require": "6.0.*"
+            "allow-contrib": true,
+            "require": "6.0.*",
+            "docker": false
         }
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "v2.30",
+        "jawira/skeleton": "^2.23"
     }
 }

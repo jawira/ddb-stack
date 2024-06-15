@@ -1,0 +1,6 @@
+[submodule "doctrine-diagram-bundle"]
+	path = doctrine-diagram-bundle
+	url = git@github.com:jawira/doctrine-diagram-bundle.git
+[submodule "db-draw"]
+	path = db-draw
+	url = git@github.com:jawira/db-draw.git
