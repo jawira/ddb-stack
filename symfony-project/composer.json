@@ -22,7 +22,7 @@
   "repositories": [
     {
       "type": "path",
-      "url": "./doctrine-diagram-bundle",
+      "url": "../doctrine-diagram-bundle",
       "options": {
         "symlink": true
       }

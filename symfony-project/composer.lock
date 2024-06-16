@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c80d0d74899f7626e43d1e8421257944",
+    "content-hash": "0e494fa1f38ca2f330eb06503fa890ca",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1545,7 +1545,7 @@
             "version": "dev-jar",
             "dist": {
                 "type": "path",
-                "url": "./doctrine-diagram-bundle",
+                "url": "../doctrine-diagram-bundle",
                 "reference": "bae1b861547cfa31d1d430c71e60972928342dc3"
             },
             "require": {

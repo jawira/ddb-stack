@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="DDB Stack" description="Project to develop jawira/doctrine-diagram-bundle"
+<project name="Demo project" description="Demo project"
          default="help" phingVersion="3">
 
 
   <property name="composer.flags" value="--ansi"/>
 
 
-  <target name="setup" depends="symfony:setup,db:start"/>
+  <target name="setup" depends="composer:install"/>
 
-  <target name="symfony:setup" description="Start">
-    <phing dir="symfony-project" target="setup" haltonfailure="true"/>
-  </target>
-
-  <target name="db:start" description="Start institute database">
-    <phing dir="db-draw" target="dc:up" haltonfailure="true"/>
+  <target name="composer:install" description="Installs the project dependencies">
+    <!-- Use &#45;&#45;no-dev for prod -->
+    <composer command="install">
+      <arg value="--no-interaction"/>
+      <arg value="--prefer-dist"/>
+      <arg value="--no-progress"/>
+      <arg value="--ansi"/>
+      <arg line="${composer.flags}"/>
+    </composer>
   </target>
 
   <target name="help">
