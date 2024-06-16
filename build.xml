@@ -6,7 +6,7 @@
   <property name="composer.flags" value="--ansi"/>
 
 
-  <target name="setup" depends="composer:install"/>
+  <target name="setup" depends="composer:install,db:start"/>
 
   <target name="composer:install" description="Installs the project dependencies">
     <!-- Use &#45;&#45;no-dev for prod -->
@@ -20,7 +20,7 @@
   </target>
 
   <target name="db:start" description="Start institute database">
-    <phing  dir="db-draw" target="dc:up" haltonfailure="true"/>
+    <phing dir="db-draw" target="dc:up" haltonfailure="true"/>
   </target>
 
   <target name="help">

@@ -1542,33 +1542,36 @@
         },
         {
             "name": "jawira/doctrine-diagram-bundle",
-            "version": "dev-main",
+            "version": "dev-jar",
             "dist": {
                 "type": "path",
                 "url": "./doctrine-diagram-bundle",
-                "reference": "1122c8e68b20ff7321275520924bcb034a4e83c3"
+                "reference": "bae1b861547cfa31d1d430c71e60972928342dc3"
             },
             "require": {
                 "doctrine/doctrine-bundle": "^2.5",
                 "doctrine/orm": "^2.9 || ^3.0",
                 "jawira/db-draw": "^1.6",
                 "jawira/plantuml-client": "^1.0",
+                "jawira/plantuml-to-image": "^1.1",
                 "php": "^8.0",
+                "symfony/config": "^6.0 || ^7.0",
                 "symfony/console": "^6.0 || ^7.0",
+                "symfony/dependency-injection": "^6.0 || ^7.0",
                 "symfony/filesystem": "^6.0 || ^7.0",
-                "symfony/framework-bundle": "^6.0 || ^7.0"
+                "symfony/http-kernel": "^6.0 || ^7.0"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.31",
-                "friendsofphp/php-cs-fixer": "^3.46",
-                "jawira/plantuml": "^1.2023",
+                "ergebnis/composer-normalize": "^2.42",
+                "friendsofphp/php-cs-fixer": "^3.54",
+                "jawira/plantuml": "^1.2024.4",
                 "jawira/skeleton": "^2.22",
                 "phpstan/extension-installer": "^1.3.1",
-                "phpstan/phpstan": "^1.10.55",
-                "phpstan/phpstan-symfony": "^1.3.7"
+                "phpstan/phpstan": "^1.10.67",
+                "phpstan/phpstan-symfony": "^1.3.12"
             },
             "suggest": {
-                "jawira/plantuml": "Install PlantUML executable with Composer."
+                "jawira/plantuml": "Install PlantUML executable/jar with Composer."
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -1594,7 +1597,8 @@
                 "symfony-bundle"
             ],
             "support": {
-                "issues": "https://github.com/jawira/doctrine-diagram-bundle/issues"
+                "issues": "https://github.com/jawira/doctrine-diagram-bundle/issues",
+                "docs": "https://jawira.github.io/doctrine-diagram-bundle"
             },
             "transport-options": {
                 "symlink": true,
@@ -1710,6 +1714,60 @@
                 "source": "https://github.com/jawira/plantuml-encoding/tree/v1.1.0"
             },
             "time": "2022-05-31T18:58:21+00:00"
+        },
+        {
+            "name": "jawira/plantuml-to-image",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jawira/plantuml-to-image.git",
+                "reference": "ea9da7f74f9249f86e4a031d90b23a49f9c7d204"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jawira/plantuml-to-image/zipball/ea9da7f74f9249f86e4a031d90b23a49f9c7d204",
+                "reference": "ea9da7f74f9249f86e4a031d90b23a49f9c7d204",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0",
+                "symfony/process": "^5.4 || ^6.0 || ^7.0"
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.28",
+                "ext-libxml": "*",
+                "ext-simplexml": "*",
+                "jawira/plantuml": "^1.2022",
+                "jawira/skeleton": "^2.16",
+                "jawira/the-lost-functions": "^1.5.0",
+                "phpunit/phpunit": "^9.6.17",
+                "vimeo/psalm": "^4.30.0"
+            },
+            "suggest": {
+                "jawira/plantuml": "Provides PlantUml (jar and executable)"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jawira\\PlantUmlToImage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jawira Portugal",
+                    "email": "dev@tugal.be"
+                }
+            ],
+            "description": "PlantUml wrapper to convert puml diagrams to images.",
+            "support": {
+                "issues": "https://github.com/jawira/plantuml-to-image/issues",
+                "source": "https://github.com/jawira/plantuml-to-image/tree/v1.1.1"
+            },
+            "time": "2024-04-18T19:31:33+00:00"
         },
         {
             "name": "jawira/the-lost-functions",
@@ -3786,6 +3844,67 @@
                 }
             ],
             "time": "2024-01-29T20:11:03+00:00"
+        },
+        {
+            "name": "symfony/process",
+            "version": "v6.0.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "2114fd60f26a296cc403a7939ab91478475a33d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/2114fd60f26a296cc403a7939ab91478475a33d4",
+                "reference": "2114fd60f26a296cc403a7939ab91478475a33d4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Executes commands in sub-processes",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/process/tree/v6.0.19"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-01-01T08:36:10+00:00"
         },
         {
             "name": "symfony/routing",
